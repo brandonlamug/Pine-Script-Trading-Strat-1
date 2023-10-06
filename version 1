@@ -1,0 +1,10 @@
+strategy(title="Rate Of Change", overlay = true)
+buysig = ta.roc(close, 2) <= .5
+buysig2 = ta.sar(.03,.03,.3)
+if(buysig and buysig2)
+    strategy.entry("buy", strategy.long, 1)
+sellsig = ta.roc(close, 2) >= .5
+sellsig2 = ta.sar(.03,.03,.3)
+if(sellsig and sellsig2)
+    strategy.entry("sell", strategy.short, 1)
+plot(ta.roc(close,2))
