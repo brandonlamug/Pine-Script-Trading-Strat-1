@@ -1,3 +1,4 @@
+##THIS SCRIPT IS TO BE USED IN TRADING VIEW!!
 strategy(title="Rate Of Change", overlay = true)
 buysig = ta.roc(close, 2) <= .5
 buysig2 = ta.sar(.03,.03,.3)
