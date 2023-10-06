@@ -1,0 +1,14 @@
+strategy(title="form #4", overlay = true)
+//BB
+[middle, upper, lower] = ta.bb(close, 2, 1)
+//ROC
+buysig = ta.roc(close, 7) <= .3
+//SAR
+if(buysig)
+    strategy.entry("buy", strategy.long, 1)
+sellsig = ta.roc(close, 7) >= .5
+sellsig2 = ta.sar(.03,.03,.3)
+if(sellsig)
+    strategy.entry("sell", strategy.short, 1)
+if(sellsig and sellsig2)
+    strategy.entry("sell", strategy.short, 1)
